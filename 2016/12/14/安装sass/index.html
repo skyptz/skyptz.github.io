@@ -1,0 +1,657 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Sass,CSS,Ruby," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="传统认知中，CSS更像是一种设计工具，在编写过程中并不怎么涉及到编程思想。在这样合适的时间，Sass出现了。它弥补了CSS的在编程上的某些不足；比如定义变量、定义宏、定义函数，使用JSON数据等等，它能够更好地简化开发代码和维护工序。试想当你想要全网更改样式，在CSS中你可能需要在眼花缭乱的代码中逐一修改，不小心疏漏也是常见的事情。但是Sass只需更改一小块代码块就可以实现通篇修改。然而Sass并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从CSS到Sass">
+<meta property="og:url" content="https://skyptz.github.io/2016/12/14/安装sass/index.html">
+<meta property="og:site_name" content="chihuahua's blog">
+<meta property="og:description" content="传统认知中，CSS更像是一种设计工具，在编写过程中并不怎么涉及到编程思想。在这样合适的时间，Sass出现了。它弥补了CSS的在编程上的某些不足；比如定义变量、定义宏、定义函数，使用JSON数据等等，它能够更好地简化开发代码和维护工序。试想当你想要全网更改样式，在CSS中你可能需要在眼花缭乱的代码中逐一修改，不小心疏漏也是常见的事情。但是Sass只需更改一小块代码块就可以实现通篇修改。然而Sass并">
+<meta property="og:image" content="https://skyptz.github.io/images/sass1.jpg">
+<meta property="og:image" content="https://skyptz.github.io/images/sass2.jpg">
+<meta property="og:image" content="https://skyptz.github.io/images/sass3.jpg">
+<meta property="og:image" content="https://skyptz.github.io/images/sass4.jpg">
+<meta property="og:image" content="https://skyptz.github.io/images/sass5.jpg">
+<meta property="og:updated_time" content="2016-12-14T09:49:12.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从CSS到Sass">
+<meta name="twitter:description" content="传统认知中，CSS更像是一种设计工具，在编写过程中并不怎么涉及到编程思想。在这样合适的时间，Sass出现了。它弥补了CSS的在编程上的某些不足；比如定义变量、定义宏、定义函数，使用JSON数据等等，它能够更好地简化开发代码和维护工序。试想当你想要全网更改样式，在CSS中你可能需要在眼花缭乱的代码中逐一修改，不小心疏漏也是常见的事情。但是Sass只需更改一小块代码块就可以实现通篇修改。然而Sass并">
+<meta name="twitter:image" content="https://skyptz.github.io/images/sass1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://skyptz.github.io/2016/12/14/安装sass/"/>
+
+  <title> 从CSS到Sass | chihuahua's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">chihuahua's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">从前端小菜到全栈大妈</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            我的首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            我的日志
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            日志分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            日志标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                从CSS到Sass
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-14T11:31:17+08:00" content="2016-12-14">
+              2016-12-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/基本教程/" itemprop="url" rel="index">
+                    <span itemprop="name">基本教程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/14/安装sass/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/14/安装sass/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>传统认知中，CSS更像是一种设计工具，在编写过程中并不怎么涉及到编程思想。<br>在这样合适的时间，Sass出现了。它弥补了CSS的在编程上的某些不足；<br>比如定义变量、定义宏、定义函数，使用JSON数据等等，它能够更好地简化开发代码和维护工序。<br>试想当你想要全网更改样式，在CSS中你可能需要在眼花缭乱的代码中逐一修改，不小心疏漏也是常见的事情。但是Sass只需更改一小块代码块就可以实现通篇修改。<br>然而Sass并不等同于CSS，因为.css文件是直接可以被引用的文件，而.scss则是预编译文件，它需要编译成css从而被网页引用，今天要讲的是如何安装Sass到windows系统。<br><a id="more"></a><br>由于sass依赖Ruby环境，因此，首先我们要搭建Ruby</p>
+<h1 id="windows上安装Ruby"><a href="#windows上安装Ruby" class="headerlink" title="windows上安装Ruby"></a>windows上安装Ruby</h1><p>在官网上下载对应windows系统的安装包。官网地址为<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">http://rubyinstaller.org/downloads/</a><br><img src="/images/sass1.jpg" alt="ruby安装示意图"><br>左侧箭头方框中的部分就是最近几个Ruby版本的安装包，我安装的是2.3.3（x64）64位的版本；<br>安装时只用在这一步骤点击这一项。可以自动添加环境变量，不用自己添加了，剩下一键操作就可以；<br><img src="/images/sass2.jpg" alt="ruby安装示意图"><br>在命令行检查一下是否安装成功Ruby<br><img src="/images/sass3.jpg" alt="ruby安装示意图"><br>Ruby安装成功了，接下来就是安装Sass了。</p>
+<h1 id="windows上安装Sass"><a href="#windows上安装Sass" class="headerlink" title="windows上安装Sass"></a>windows上安装Sass</h1><p>正常情况下，如果在命令行中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install sass</div></pre></td></tr></table></figure></p>
+<p>是会显示出正常的安装过程的，但是我们清楚，由于某些不可抗【被墙】的因素，我们无法完成install，那么我们需要换一个RubyGems 镜像<br>首先列出当前源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources -l</div></pre></td></tr></table></figure></p>
+<p>看一下sources都有哪些<br>之后操作如下：<br>首先移除原来的源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://rubygems.org/</div></pre></td></tr></table></figure></p>
+<p>之后添加源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources -a https://ruby.taobao.org/</div></pre></td></tr></table></figure></p>
+<p>如果淘宝源不成功，可以换成基于腾讯云的：<a href="http://gems.ruby-china.org/" target="_blank" rel="external">http://gems.ruby-china.org/</a><br>如果出现了如下的错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR:  Could not find a valid gem &apos;sass&apos; (&gt;= 0), here is why:  </div><div class="line">        Unable to download data from https://gems.ruby-china.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://gems.ruby-china.org/specs.4.8.gz)</div></pre></td></tr></table></figure></p>
+<p>那么有一种解决办法，就是修改C盘下的.gemrc文件，这是属于一步到位的做法。<br>通过C盘查找找到这个文件，将文件内容改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">:backtrace: false</div><div class="line">:bulk_threshold: 1000</div><div class="line">:sources: </div><div class="line">- http://gems.ruby-china.org/ </div><div class="line">:update_sources: true</div><div class="line">:verbose: true</div></pre></td></tr></table></figure></p>
+<p>如果还是不可行，那么再将源修改一下，以上就是我文件中具体的内容。我改成了腾讯云的源才成功；<br>之后在控制台中查看源：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem sources -l</div></pre></td></tr></table></figure></p>
+<p>出现如下结果证明源是对的。<br><img src="/images/sass4.jpg" alt="sass安装示意图"></p>
+<p>接下来安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install sass</div></pre></td></tr></table></figure></p>
+<p>直到出现successful的提示证明安装成功了。<br>如果百试不成功，那么可以去这个网站下载sass压缩包<br><a href="http://www.w3cplus.com/sassguide/sass-3.4.22.gem.zip" target="_blank" rel="external">http://www.w3cplus.com/sassguide/sass-3.4.22.gem.zip</a><br>下载好之后在命令行敲下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install 【sass软件包在本地绝对路径】</div></pre></td></tr></table></figure></p>
+<p>也可以安装成功。<br>如下是显示sass的版本：<br><img src="/images/sass5.jpg" alt="sass安装示意图"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Sass/" rel="tag">#Sass</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/Ruby/" rel="tag">#Ruby</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/08/让图片及背景图片自适应/" rel="next" title="让图片及背景图片自适应">
+                <i class="fa fa-chevron-left"></i> 让图片及背景图片自适应
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/16/使用gulp自动编译Sass/" rel="prev" title="使用Gulp自动编译Sass">
+                使用Gulp自动编译Sass <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/14/安装sass/"
+           data-title="从CSS到Sass" data-url="https://skyptz.github.io/2016/12/14/安装sass/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/headlogo.jpg"
+               alt="Chihuahua" />
+          <p class="site-author-name" itemprop="name">Chihuahua</p>
+          <p class="site-description motion-element" itemprop="description">I have to emphasize a person called bobo.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows上安装Ruby"><span class="nav-text">windows上安装Ruby</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows上安装Sass"><span class="nav-text">windows上安装Sass</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chihuahua</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chihuahuaptz"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
