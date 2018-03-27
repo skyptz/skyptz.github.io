@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="The end is always near.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chihuahua's blog">
-<meta property="og:url" content="https://skyptz.github.io/tags/静态网站/index.html">
+<meta name="description" content="js中作用域只有函数作用域和全局作用域，在函数体内使用var 定义的变量，会被提到函数开始处进行定义，作用域为整个函数,常见的误区如下var a=[];for(var i = 0;i&amp;lt;10;i++){   var q = i;   a[i]=function(){console.log(q)}}a0  
+其中，由于for循环并不是一个函数体，所以for循环中定义的变量q和i是作用域for循环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中for循环变量作用域">
+<meta property="og:url" content="https://skyptz.github.io/2018/03/27/JS中for循环变量作用域/index.html">
 <meta property="og:site_name" content="chihuahua's blog">
-<meta property="og:description" content="The end is always near.">
+<meta property="og:description" content="js中作用域只有函数作用域和全局作用域，在函数体内使用var 定义的变量，会被提到函数开始处进行定义，作用域为整个函数,常见的误区如下var a=[];for(var i = 0;i&amp;lt;10;i++){   var q = i;   a[i]=function(){console.log(q)}}a0  
+其中，由于for循环并不是一个函数体，所以for循环中定义的变量q和i是作用域for循环">
+<meta property="og:updated_time" content="2018-03-27T08:07:13.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chihuahua's blog">
-<meta name="twitter:description" content="The end is always near.">
+<meta name="twitter:title" content="JS中for循环变量作用域">
+<meta name="twitter:description" content="js中作用域只有函数作用域和全局作用域，在函数体内使用var 定义的变量，会被提到函数开始处进行定义，作用域为整个函数,常见的误区如下var a=[];for(var i = 0;i&amp;lt;10;i++){   var q = i;   a[i]=function(){console.log(q)}}a0  
+其中，由于for循环并不是一个函数体，所以for循环中定义的变量q和i是作用域for循环">
 
 
 
@@ -113,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="https://skyptz.github.io/tags/静态网站/"/>
+  <link rel="canonical" href="https://skyptz.github.io/2018/03/27/JS中for循环变量作用域/"/>
 
-  <title> 标签: 静态网站 | chihuahua's blog </title>
+  <title> JS中for循环变量作用域 | chihuahua's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,74 +238,149 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        静态网站
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/11/08/让图片及背景图片自适应/" itemprop="url">
-              
-                <span itemprop="name">让图片及背景图片自适应</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-08T10:40:17+08:00"
-              content="2016-11-08" >
-          11-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/20/关于用Hexo搭建github静态博客/" itemprop="url">
-              
-                <span itemprop="name">关于用Hexo搭建github静态博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-20T09:49:54+08:00"
-              content="2016-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS中for循环变量作用域
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T16:05:50+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端技术/" itemprop="url" rel="index">
+                    <span itemprop="name">前端技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/27/JS中for循环变量作用域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/27/JS中for循环变量作用域/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>js中作用域只有函数作用域和全局作用域，在函数体内使用var 定义的变量，会被提到函数开始处进行定义，作用域为整个函数,常见的误区如下<br>var a=[];<br>for(var i = 0;i&lt;10;i++){<br>   var q = i;<br>   a[i]=function(){console.log(q)}<br>}<br>a<a href="">0</a>  </p>
+<p>其中，由于for循环并不是一个函数体，所以for循环中定义的变量q和i是作用域for循环所在的函数体，和a同级，<br>i++ 和  q=i 并不是重新定义变量，只是重复赋值，最终循环结束，i = 10,q=9;<br>由于function(){console.log(q)} 并不是立即执行，所以这里的q一直是存储的内存引用，最终所有的a<a href="">i</a>都是输出 9<br>不过，在es6中新增了let命令声明变量，用法和var类似，不过let所声明的变量，只在let命令所在的代码块有效果，for循环的计数器中就很适合let命令<br>var a=[];<br>for(let i = 0;i&lt;10;i++){<br>   ley q = i;<br>   a[i]=function(){console.log(q)}<br>}<br>a<a href="">6</a>    //这里会输出   6  let声明的变量仅在块级作用域有效，所以这里的i只在本轮循环有效果，每次循环的i其实都是一个新的变量</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/原github注销/" rel="next" title="原github注销">
+                <i class="fa fa-chevron-left"></i> 原github注销
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -309,6 +388,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/03/27/JS中for循环变量作用域/"
+           data-title="JS中for循环变量作用域" data-url="https://skyptz.github.io/2018/03/27/JS中for循环变量作用域/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -328,8 +415,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/headlogo.jpg"
@@ -379,6 +475,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -473,6 +580,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
